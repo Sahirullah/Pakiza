@@ -1,0 +1,253 @@
+.about {
+  background: #f5e6d3;
+  padding: 80px 0;
+}
+
+/* CTA Buttons */
+.about-cta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.btn-cta {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-cta {
+  background: #c41e3a;
+  color: white;
+  box-shadow: 0 4px 15px rgba(196, 30, 58, 0.2);
+}
+
+.btn-primary-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.3);
+  background: #a01830;
+}
+
+.btn-whatsapp {
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+}
+
+.btn-whatsapp:hover {
+  border-color: #c41e3a;
+  transform: translateY(-2px);
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-label {
+  display: inline-block;
+  background: rgba(196, 30, 58, 0.1);
+  color: #c41e3a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.section-title .highlight {
+  color: #c41e3a;
+}
+
+/* Content Grid */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Cards */
+.about-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.card-icon {
+  font-size: 24px;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Who Am I Card */
+.who-am-i {
+  border-left: 4px solid #c41e3a;
+}
+
+.quote {
+  background: rgba(196, 30, 58, 0.08);
+  border-left: 4px solid #c41e3a;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.bio {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.bio strong {
+  color: #333;
+  font-weight: 700;
+}
+
+.credentials {
+  margin: 24px 0;
+  padding: 20px 0;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.credential {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.credential:last-child {
+  margin-bottom: 0;
+}
+
+.dot {
+  color: #c41e3a;
+  font-size: 8px;
+}
+
+.outcome {
+  margin-top: 24px;
+}
+
+.outcome-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #999;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.outcome-text {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.outcome-text .highlight {
+  color: #c41e3a;
+}
+
+/* What You Get Card */
+.what-you-get {
+  border-left: 4px solid #c41e3a;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.service-item {
+  display: flex;
+  gap: 16px;
+}
+
+.service-number {
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  background: #c41e3a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.service-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #c41e3a;
+  margin-bottom: 6px;
+}
+
+.service-content p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-cta {
+    flex-direction: column;
+  }
+
+  .btn-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-card {
+    padding: 30px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
