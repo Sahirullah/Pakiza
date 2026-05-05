@@ -5,6 +5,10 @@ import './Contact.css'
 export default function Contact() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
 
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('Seeratum281@gmail.com')
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,76 +31,73 @@ export default function Contact() {
   return (
     <section id="contact" className="contact" ref={ref}>
       <div className="container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+        {/* Section Label */}
+        <motion.div
+          className="section-label-wrapper"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Ready to Build a Brand? Let's Talk!
-        </motion.h2>
+          <span className="section-label">AVAILABLE FOR WORK</span>
+        </motion.div>
 
+        {/* Section Title */}
         <motion.div
-          className="contact-content"
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <motion.form className="contact-form" variants={itemVariants}>
-            <div className="form-group">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="form-input"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="form-input"
-              />
-            </div>
-            <div className="form-group">
-              <textarea
-                placeholder="Your Message"
-                rows="5"
-                className="form-input"
-              ></textarea>
-            </div>
-            <motion.button
-              type="submit"
-              className="submit-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Send Message
-            </motion.button>
-          </motion.form>
+          <h2 className="section-title">Ready to Build a Brand</h2>
+          <h2 className="section-title highlight-title"><span className="highlight">That Sells?</span></h2>
+          <p className="section-subtitle">Let's turn your vision into a high-authority identity. Reach out and let's start the conversation.</p>
+        </motion.div>
 
-          <motion.div className="contact-info" variants={itemVariants}>
-            <div className="info-item">
+        {/* Contact Box */}
+        <motion.div
+          className="contact-box"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="contact-info-row">
+            <div className="contact-info-item">
               <span className="info-icon">📧</span>
               <div>
-                <h4>Email</h4>
-                <p>hello@example.com</p>
+                <p className="info-label">EMAIL</p>
+                <p className="info-value">Seeratum281@gmail.com</p>
               </div>
             </div>
-            <div className="info-item">
-              <span className="info-icon">📱</span>
+            <div className="contact-info-item">
+              <span className="info-icon">💬</span>
               <div>
-                <h4>Phone</h4>
-                <p>+1 (555) 123-4567</p>
+                <p className="info-label">WHATSAPP</p>
+                <p className="info-value">+92 3237092655</p>
               </div>
             </div>
-            <div className="info-item">
-              <span className="info-icon">📍</span>
-              <div>
-                <h4>Location</h4>
-                <p>San Francisco, CA</p>
-              </div>
-            </div>
-          </motion.div>
+          </div>
+
+          <p className="reach-out-text">reach out via</p>
+
+          <div className="contact-buttons">
+            <motion.button
+              className="btn-copy-email"
+              onClick={handleCopyEmail}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              📋 Copy Email
+            </motion.button>
+            <motion.button
+              className="btn-whatsapp"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              💬 Chat on WhatsApp
+            </motion.button>
+          </div>
+
+          <p className="response-time">⏱️ Usually responds within 24 hours</p>
         </motion.div>
       </div>
     </section>

@@ -8,24 +8,27 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      text: 'Exceptional developer with great attention to detail. Delivered the project on time and exceeded expectations.',
-      author: 'John Smith',
-      role: 'CEO, Tech Startup',
+      text: 'Before working with Seerat, my brand looked like everyone else. After the rebrand, people started taking me seriously. The positioning and visuals completely changed how my audience perceives me.',
+      author: 'Ahmed Raza',
+      role: 'Business Coach - Aura Academy',
       rating: 5,
+      avatar: 'A',
     },
     {
       id: 2,
-      text: 'Professional, creative, and highly skilled. A pleasure to work with on multiple projects.',
-      author: 'Sarah Johnson',
-      role: 'Product Manager',
+      text: 'I used to struggle with how my content should look. Now I have a complete system. Everything is consistent, clean, and actually reflects my expertise.',
+      author: 'Hira Malik',
+      role: 'Digital Educator - Voltix',
       rating: 5,
+      avatar: 'H',
     },
     {
       id: 3,
-      text: 'Outstanding work quality and communication. Highly recommended for any web development project.',
-      author: 'Mike Davis',
-      role: 'Founder, Digital Agency',
+      text: 'This wasn\'t just design work — it was strategic. My academy finally looks like a serious platform, and my audience responds differently now.',
+      author: 'Usman Tariq',
+      role: 'Academy Owner - Elevate',
       rating: 5,
+      avatar: 'U',
     },
   ]
 
@@ -51,14 +54,26 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="testimonials" ref={ref}>
       <div className="container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+        {/* Section Label */}
+        <motion.div
+          className="section-label-wrapper"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
         >
-          What They Say About Me
-        </motion.h2>
+          <span className="section-label">TESTIMONIALS</span>
+        </motion.div>
+
+        {/* Section Title */}
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <h2 className="section-title">What They Say <span className="highlight">About Me</span></h2>
+          <p className="section-subtitle">What people say about working with me</p>
+        </motion.div>
 
         <motion.div
           className="testimonials-grid"
@@ -75,13 +90,16 @@ export default function Testimonials() {
             >
               <div className="stars">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i}>⭐</span>
+                  <span key={i}>★</span>
                 ))}
               </div>
               <p className="testimonial-text">"{testimonial.text}"</p>
-              <div className="testimonial-author">
-                <h4>{testimonial.author}</h4>
-                <p>{testimonial.role}</p>
+              <div className="testimonial-footer">
+                <div className="testimonial-avatar">{testimonial.avatar}</div>
+                <div className="testimonial-author">
+                  <h4>{testimonial.author}</h4>
+                  <p>{testimonial.role}</p>
+                </div>
               </div>
             </motion.div>
           ))}
