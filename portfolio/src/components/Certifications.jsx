@@ -8,24 +8,24 @@ export default function Certifications() {
   const certs = [
     {
       id: 1,
-      title: 'AWS Certified Solutions Architect',
-      issuer: 'Amazon Web Services',
-      year: '2023',
-      icon: '☁️',
-    },
-    {
-      id: 2,
-      title: 'Google UX Design Certificate',
-      issuer: 'Google',
-      year: '2022',
+      title: 'Adobe Certified Professional',
+      issuer: 'Adobe Inc.',
+      year: '2025',
       icon: '🎨',
     },
     {
+      id: 2,
+      title: '1 Month Canva Freelancing Course',
+      issuer: 'NextGen Digital University',
+      year: '2025',
+      icon: '🎯',
+    },
+    {
       id: 3,
-      title: 'Full Stack Web Development',
-      issuer: 'Udacity',
-      year: '2021',
-      icon: '💻',
+      title: '1 Month Social Media Marketing Course',
+      issuer: 'NextGen Digital University',
+      year: '2025',
+      icon: '📱',
     },
   ]
 
@@ -51,14 +51,26 @@ export default function Certifications() {
   return (
     <section id="certifications" className="certifications" ref={ref}>
       <div className="container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+        {/* Section Label */}
+        <motion.div
+          className="section-label-wrapper"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
         >
-          My Certifications
-        </motion.h2>
+          <span className="section-label">CREDENTIALS</span>
+        </motion.div>
+
+        {/* Section Title */}
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <h2 className="section-title">My <span className="highlight">Certifications</span></h2>
+          <p className="section-subtitle">Internationally recognised credentials in design and brand identity</p>
+        </motion.div>
 
         <motion.div
           className="certs-grid"
