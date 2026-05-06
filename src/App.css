@@ -1,0 +1,14 @@
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+}

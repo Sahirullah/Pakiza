@@ -18,7 +18,7 @@
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,17 +26,11 @@
 
 @media (max-width: 1024px) {
   .nav-container {
-    padding: 0 60px;
+    padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-container {
-    padding: 0 30px;
-  }
-}
-
-@media (max-width: 480px) {
   .nav-container {
     padding: 0 20px;
   }
